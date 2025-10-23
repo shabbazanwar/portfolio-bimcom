@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Salau Abdulazeem Opeyemi — Portfolio</title>
+  <meta name="description" content="Personal single-page portfolio — HTML, CSS, JS only." />
+  <style>
+    :root{
+      --bg:#f6f7fb;--card:#ffffff;--text:#0f1724;--muted:#556;--accent:#2563eb;
+    }
+    [data-theme="dark"]{ --bg:#0b1220; --card:#071025; --text:#e6eef8; --muted:#9bb; --accent:#60a5fa }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:var(--text); line-height:1.5}
+    .container{max-width:980px;margin:32px auto;padding:24px}
+    header{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:14px;align-items:center}
+    .avatar{width:72px;height:72px;border-radius:12px;object-fit:cover;border:2px solid rgba(0,0,0,0.06)}
+    h1{font-size:1.45rem;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    nav{display:flex;gap:10px}
+    nav a{background:transparent;border:0;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--muted)}
+    nav a:hover{color:var(--accent)}
+
+    .hero{display:grid;grid-template-columns:1fr 300px;gap:20px;margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 10px;border-radius:999px;font-size:0.85rem;border:1px solid rgba(0,0,0,0.06)}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+    .project{padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.04)}
+    .project h3{margin:0 0 6px}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    .controls{display:flex;gap:8px;align-items:center}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:white;text-decoration:none}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:420px){.gallery{grid-template-columns:1fr}}
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .center{display:flex;align-items:center;justify-content:center}
+  </style>
+</head>
+<body>
+  <div class="container" id="page">
+    <header>
+      <div class="brand">
+        <img src="images/photo4.jpg" alt="Avatar" class="avatar" id="avatar">
+        <div>
+          <h1 id="name">Salau Abdulazeem Opeyemi</h1>
+          <p class="lead" id="headline">Full-Stack Web Developer || Software Developer</p>
+        </div>
+      </div>
+      <div class="controls">
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="btn" id="themeToggle">Toggle Theme</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="card" id="about">
+          <h2>About me</h2>
+          <p>I'm Abdulazeem Salau, a Full-Stack Developer passionate about creating web applications. I specialize in both front-end and back-end development using technologies like React, Node.js, and MongoDB. I enjoy solving problems, building user-friendly interfaces, and writing clean, scalable code. I'm always eager to learn new technologies and work on projects that make an impact.</p>
+
+          <h3 style="margin-top:12px">Skills</h3>
+          <div class="skills">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">React</span>
+            <span class="chip">Tailwind</span>
+            <span class="chip">Bootstrap</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">Git</span>
+          </div>
+
+          <h3 style="margin-top:12px">Education</h3>
+          <p class="muted">English (ARTS), University of Lagos</p>
+          <p class="muted"></p>
+        </div>
+
+        <div class="card" style="margin-top:12px" id="projects">
+          <h2>Projects</h2>
+          <div class="projects">
+            <div class="project">
+              <h3>School Website</h3>
+              <p class="muted">A modern School Management System built using React, Node.js, and MongoDB.</p>
+              <p><a href="https://chizzy-kids-school.onrender.com/" id="proj1link">View repo</a></p>
+            </div>
+            <div class="project">
+              <h3>Multi-Vendor E-commerce Platform</h3>
+              <p class="muted">A multi-vendor e-commerce platform built using React, Node.js, and MongoDB.</p>
+              <p><a href="https://shopspire.onrender.com/" id="proj2link">View repo</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card center">
+          <div>
+            <h3>Contact</h3>
+            <p class="muted">Phone: 09044060010</p>
+            <p class="muted">Email: <a href="mailto:shabbaz.dev@gmail.com">shabbaz.dev@gmail.com</a></p>
+            <p style="margin-top:8px"><a class="btn" href="#contact">Message</a></p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Quick links</h3>
+          <p class="muted"><a href="https://github.com/shabbazanwar">GitHub</a> · <a href="https://shabbaz.onrender.com/">Portfolio</a></p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card" id="gallery" style="margin-top:18px">
+      <h2>Gallery</h2>
+      <p class="muted">At least 5 pictures are required — replace the placeholders in /images/</p>
+      <div class="gallery">
+        <img src="images/photo1.jpg" alt="photo1">
+        <img src="images/photo2.jpg" alt="photo2">
+        <img src="images/photo3.jpg" alt="photo3">
+        <img src="images/photo4.jpg" alt="photo4">
+        <img src="images/photo5.jpg" alt="photo5">
+      </div>
+    </section>
+
+    <section class="card" id="contact" style="margin-top:18px">
+      <h2>Contact & CV</h2>
+      <p>Download CV: <a href="files/CV.pdf" download>CV (PDF)</a></p>
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <label style="display:block;margin-top:8px">Your name</label>
+        <input id="formName" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd" required>
+        <label style="display:block;margin-top:8px">Message</label>
+        <textarea id="formMessage" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd" rows="4" required></textarea>
+        <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+          <button class="btn" type="submit">Send</button>
+          <div id="formStatus" class="muted"></div>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      Built with plain HTML, CSS & JavaScript • Proudly by shabbaz.dev
+    </footer>
+  </div>
+
+  <script>
+    // Theme toggle (light / dark saved in localStorage)
+    const btn = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function applyTheme(t){
+      if(t==='dark') document.documentElement.setAttribute('data-theme','dark');
+      else document.documentElement.removeAttribute('data-theme');
+    }
+    const saved = localStorage.getItem('theme') || 'light';
+    applyTheme(saved);
+    btn.addEventListener('click',()=>{
+      const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(cur);
+      localStorage.setItem('theme',cur);
+    });
+
+    // Simple contact form behaviour (client-side only)
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('formName').value.trim();
+      const msg = document.getElementById('formMessage').value.trim();
+      const status = document.getElementById('formStatus');
+      if(!name || !msg){ status.textContent='Please complete the form.'; return }
+      status.textContent = 'Message captured — this is a client-side demo.';
+      setTimeout(()=>{status.textContent='Message ready to send (demo)';},1200);
+    }
+
+    // Small helper: hash navigation smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (ev)=>{
+        ev.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        if(!id) return; const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    });
+  </script>
+</body>
+</html>
